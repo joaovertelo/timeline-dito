@@ -56,6 +56,7 @@ class App extends Component {
         </header>
 
         <section >
+          <h2>Componente de timeline de compras:</h2>
           <article>
             {this.state.compras &&
               <Timeline data={this.state.compras} />

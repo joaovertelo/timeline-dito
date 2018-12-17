@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Timeline, TimelineEvent } from 'react-event-timeline'
 import './Timeline.css'
-const moment = require('moment')
+import { FaShoppingBag } from 'react-icons/fa';
+
+const moment = require('moment');
 
 export class TimeLine extends Component {
 
@@ -24,11 +26,10 @@ export class TimeLine extends Component {
 
     render() {
 
-        console.log(this.props.data)
         return (
             <Timeline style={{ width: '600px' }}>
                 {this.props.data && this.props.data.map((obj, index) =>
-                    <TimelineEvent key={index} title={this.titulo(obj.timestamp, obj.preco_total, obj.loja)} >
+                    <TimelineEvent icon={<FaShoppingBag />} key={index} title={this.titulo(obj.timestamp, obj.preco_total, obj.loja)} >
                         <table>
                             <tbody>
                                 <tr>
@@ -48,8 +49,6 @@ export class TimeLine extends Component {
                 )
 
                 }
-
-
             </Timeline>
         )
     }
