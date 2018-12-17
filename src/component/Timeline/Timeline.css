@@ -1,0 +1,36 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+ }
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.flex-container {
+    display: flex;
+    align-items: stretch;
+  }
+  
+.flex-container > div {
+    font-weight: bold;
+    margin: 10px;
+    text-align: left;
+}
+
+.flex-1 > div {
+    flex-grow: 1
+}
+
+.flex-3 > div {
+    flex-grow: 3
+}
+
+div.inline { float:left; }

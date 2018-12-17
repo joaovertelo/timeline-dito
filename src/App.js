@@ -26,7 +26,7 @@ class App extends Component {
             timestamp: o.timestamp
           };
         })
-
+        
         compras = compras.map(o => {
           let transaction = o.custom_data.filter(o => o.key === "transaction_id")[0].value
           let loja = o.custom_data.filter(o => o.key === "store_name")[0].value
@@ -36,17 +36,19 @@ class App extends Component {
             loja: loja,
             transaction: transaction,
             produtos,
-            timestamp: o.timestamp
+            timestamp: o.timestamp,
+            preco_total: o.revenue
           };
         })
         compras = _.orderBy(compras, ['timestamp'], ['desc']);
+        console.log("compras", compras)
         this.setState({ compras })
       }
     })
   }
 
   render() {
-    console.log(this.state.compras)
+
     return (
       <div className="App">
         <header className="App-header">
@@ -55,7 +57,9 @@ class App extends Component {
 
         <section >
           <article>
-            <Timeline />
+            {this.state.compras &&
+              <Timeline data={this.state.compras} />
+            }
           </article>
         </section>
 
