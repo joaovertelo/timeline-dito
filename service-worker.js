@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/timeline-dito/precache-manifest.8942e7cbb42fdc398f78fa23c63690ef.js"
+  "/timeline-dito/precache-manifest.cd0ec9174eec5970c037bb84e216fac1.js"
 );
 
 workbox.clientsClaim();
